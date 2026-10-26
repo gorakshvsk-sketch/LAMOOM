@@ -1,0 +1,46 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent" android:layout_height="match_parent" android:background="#08090D">
+    <androidx.camera.view.PreviewView
+        android:id="@+id/previewView" android:layout_width="match_parent" android:layout_height="match_parent"
+        android:keepScreenOn="true" />
+
+    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+        android:orientation="horizontal" android:gravity="center_vertical" android:paddingStart="16dp"
+        android:paddingEnd="16dp" android:paddingTop="14dp" android:paddingBottom="10dp"
+        android:background="#AA08090D" android:layout_gravity="top">
+        <TextView android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1"
+            android:text="AI PRO CAMERA" android:textColor="#FFF8F0" android:textStyle="bold" android:textSize="18sp" android:letterSpacing="0.08" />
+        <Button android:id="@+id/flashButton" android:layout_width="wrap_content" android:layout_height="42dp" android:text="FLASH OFF" android:textAllCaps="false" />
+        <Button android:id="@+id/switchButton" android:layout_width="wrap_content" android:layout_height="42dp" android:text="↻" android:textSize="20sp" />
+    </LinearLayout>
+
+    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+        android:layout_gravity="bottom" android:orientation="vertical" android:padding="14dp"
+        android:background="#D908090D">
+        <TextView android:id="@+id/statusText" android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:text="Starting camera…" android:textColor="#FFE7B0" android:textSize="12sp" android:gravity="center" android:paddingBottom="7dp" />
+        <HorizontalScrollView android:layout_width="match_parent" android:layout_height="wrap_content" android:scrollbars="none">
+            <LinearLayout android:layout_width="wrap_content" android:layout_height="wrap_content" android:orientation="horizontal" android:gravity="center">
+                <Button android:id="@+id/photoMode" android:layout_width="wrap_content" android:layout_height="42dp" android:text="PHOTO" android:textAllCaps="false" />
+                <Button android:id="@+id/videoMode" android:layout_width="wrap_content" android:layout_height="42dp" android:text="VIDEO" android:textAllCaps="false" />
+                <Button android:id="@+id/portraitMode" android:layout_width="wrap_content" android:layout_height="42dp" android:text="PORTRAIT" android:textAllCaps="false" />
+                <Button android:id="@+id/nightMode" android:layout_width="wrap_content" android:layout_height="42dp" android:text="NIGHT" android:textAllCaps="false" />
+                <Button android:id="@+id/moonMode" android:layout_width="wrap_content" android:layout_height="42dp" android:text="MOON" android:textAllCaps="false" />
+            </LinearLayout>
+        </HorizontalScrollView>
+        <TextView android:id="@+id/zoomLabel" android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:text="ZOOM 1.0×" android:textColor="#FFF8F0" android:textSize="12sp" android:paddingTop="8dp" />
+        <SeekBar android:id="@+id/zoomSeek" android:layout_width="match_parent" android:layout_height="wrap_content" android:max="1000" android:progress="0" />
+        <TextView android:id="@+id/exposureLabel" android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:text="EXPOSURE 0" android:textColor="#FFF8F0" android:textSize="12sp" android:paddingTop="2dp" />
+        <SeekBar android:id="@+id/exposureSeek" android:layout_width="match_parent" android:layout_height="wrap_content" android:max="12" android:progress="6" />
+        <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="horizontal" android:gravity="center_vertical" android:paddingTop="4dp">
+            <Button android:id="@+id/galleryButton" android:layout_width="0dp" android:layout_height="54dp" android:layout_weight="1" android:text="GALLERY" android:textAllCaps="false" />
+            <FrameLayout android:layout_width="92dp" android:layout_height="82dp" android:foregroundGravity="center">
+                <Button android:id="@+id/captureButton" android:layout_width="78dp" android:layout_height="78dp" android:layout_gravity="center"
+                    android:background="@drawable/capture_ring" android:text="" android:contentDescription="Capture photo or start/stop video" />
+            </FrameLayout>
+            <Button android:id="@+id/aiButton" android:layout_width="0dp" android:layout_height="54dp" android:layout_weight="1" android:text="AI ENHANCE" android:textAllCaps="false" />
+        </LinearLayout>
+    </LinearLayout>
+</FrameLayout>
